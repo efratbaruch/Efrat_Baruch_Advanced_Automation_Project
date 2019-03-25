@@ -14,7 +14,7 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.concurrent.TimeUnit;
 
-public class AbstractBasicTest {
+public abstract class AbstractBasicTest {
 
     private static WebDriver driver;
     private static WebDriverWait wait;

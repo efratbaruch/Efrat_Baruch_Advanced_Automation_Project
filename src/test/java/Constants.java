@@ -10,8 +10,7 @@ class Constants {
 
     static final String PATHWAY_TO_TEST_FILES = "~/Efrat_Baruch_Advanced_Automation_Project/src/test/test_files";
 
-
-    static final String DATABASE_URL = "jdbc:mysql://https://remotemysql.com:3306/i3FcIy3eW3?user=i3FcIy3eW3";
+    static final String DATABASE_URL = "jdbc:mysql://remotemysql.com:3306/i3FcIy3eW3?user=i3FcIy3eW3";
     static final String DATABASE_USER_NAME = "i3FcIy3eW3";
     static final String DATABASE_PASSWORD = "kHxWEWx6Vv";
 
