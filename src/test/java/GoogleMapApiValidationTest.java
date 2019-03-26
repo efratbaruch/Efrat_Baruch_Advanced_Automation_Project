@@ -1,14 +1,11 @@
 import org.openqa.selenium.WebDriver;
-import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
-import com.aventstack.extentreports.MediaEntityBuilder;
 import com.aventstack.extentreports.Status;
-import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.sql.Connection;
 
-public class GoogleMapApiValidationTest {
+class GoogleMapApiValidationTest {
 
     private DatabaseHandler mDatabaseHandler = new DatabaseHandler();
     private GooglePlacesAPIHandler mGooglePlacesAPIHandler = new GooglePlacesAPIHandler();
@@ -18,7 +15,6 @@ public class GoogleMapApiValidationTest {
     private WebDriverWait wait;
     private ExtentTest test;
 
-    // This is the constructor for the class that is responsible for arranging this tests logic.
     GoogleMapApiValidationTest(Connection connection, WebDriver driver, WebDriverWait wait, ExtentTest test){
         this.connection = connection;
         this.driver = driver;
@@ -48,7 +44,6 @@ public class GoogleMapApiValidationTest {
             mDatabaseHandler.sendTestResultsToDatabase(connection, Constants.TEST_ID, Constants.TEST_NAME, Constants.RESULT_FAIL, test);
         }
         test.log(Status.INFO, "reportTestResult method has ended.");
-
     }
 
 
