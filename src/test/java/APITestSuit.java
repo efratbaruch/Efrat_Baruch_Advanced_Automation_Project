@@ -23,4 +23,5 @@ public class APITestSuit extends AbstractBasicTest {
             googleMapApiValidationTest.reportTestResult(testSuccess);
         }
     }
+
 }

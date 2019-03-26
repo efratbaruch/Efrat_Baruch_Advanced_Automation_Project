@@ -1,5 +1,6 @@
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -7,6 +8,7 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.sql.Connection;
@@ -25,13 +27,19 @@ public abstract class AbstractBasicTest {
 
     @BeforeClass
     public static void setUpTestSuit() {
-        System.setProperty("webdriver.chrome.driver", "/Users/efratbaruch/Desktop/course/chromedriver");
-        driver = new ChromeDriver();
+
+        if(Constants.BROWSER_OF_CHOISE.equals("chrome"))
+        {
+            System.setProperty("webdriver.chrome.driver", "/Users/efratbaruch/Desktop/course/chromedriver");
+            ChromeOptions options = new ChromeOptions();
+            options.addArguments("--lang=en");
+            driver = new ChromeDriver(options);
+        }
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         wait = new WebDriverWait(driver, 10);
 
         extent = new ExtentReports();
-        ExtentHtmlReporter htmlReporter = new ExtentHtmlReporter("."+Constants.PATHWAY_TO_TEST_FILES +"/extent.html");
+        ExtentHtmlReporter htmlReporter = new ExtentHtmlReporter(Constants.PATHWAY_TO_TEST_FILES +"/extent.html");
         extent.attachReporter(htmlReporter);
         test = extent.createTest("Test reports", "Reports of Advanced Automation Course Project");
     }
@@ -59,9 +67,9 @@ public abstract class AbstractBasicTest {
             Class.forName("com.mysql.cj.jdbc.Driver");
             connection = DriverManager.getConnection(Constants.DATABASE_URL, Constants.DATABASE_USER_NAME, Constants.DATABASE_PASSWORD);
         }catch (SQLException e){
-            // TODO: insert a report and a failure action
+            test.log(Status.FATAL, "Was unable to connect to remote database");
         }catch (ClassNotFoundException ex){
-            // TODO: insert a report and a failure action
+            test.log(Status.FATAL, "Was unable to connect to remote database");
         }
     }
 
@@ -70,11 +78,12 @@ public abstract class AbstractBasicTest {
         try {
             connection.close();
         }catch (SQLException e){
-            // TODO: insert a report and a failure action
+            test.log(Status.INFO, "Was unable to close connection to remote database");
         }
     }
 
-    // TODO: add description to these and think if they are necessary or maybe I shouldn't make them private
+    // These method are responsible to pass down the listed objects for use, and yet keep them encapsulated.
+
     WebDriver getDriver(){
         return driver;
     }

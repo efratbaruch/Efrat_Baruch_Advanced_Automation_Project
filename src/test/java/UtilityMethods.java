@@ -5,16 +5,15 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.apache.commons.io.FileUtils;
-
 import java.io.File;
 import java.io.IOException;
 
 class UtilityMethods {
 
     // The method implements the internalTakeScreenshot method into the extent report in a protected way.
-    void reportAndTakeScreenshot(Status status, ExtentTest test, String logMessage, WebDriver driver){
+    void reportAndTakeScreenshot(Status status, ExtentTest test, String logMessage, String imageName, WebDriver driver){
         try {
-            test.log(status, logMessage, MediaEntityBuilder.createScreenCaptureFromPath(takeScreenShot("."+Constants.PATHWAY_TO_TEST_FILES + "/google_maps_upload_success", driver)).build());
+            test.log(status, logMessage, MediaEntityBuilder.createScreenCaptureFromPath(takeScreenShot(Constants.PATHWAY_TO_TEST_FILES + imageName, driver)).build());
         } catch (IOException e) {
             e.printStackTrace();
         }

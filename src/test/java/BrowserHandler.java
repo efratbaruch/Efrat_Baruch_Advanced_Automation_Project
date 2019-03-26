@@ -1,13 +1,12 @@
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
 import org.junit.Assert;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
 class BrowserHandler {
-
-    // TODO: wast's fail and whats fatal
 
     private UtilityMethods mUtilityMethods = new UtilityMethods();
 
@@ -22,9 +21,9 @@ class BrowserHandler {
         }
         finally {
             if (googleMapsOpened){
-                mUtilityMethods.reportAndTakeScreenshot(Status.PASS, test, "Google Maps website has opened successfully.", driver);
+                mUtilityMethods.reportAndTakeScreenshot(Status.PASS, test, "Google Maps website has opened successfully.", "/google_maps_upload_success", driver);
             }else {
-                mUtilityMethods.reportAndTakeScreenshot(Status.FATAL, test, "Was unable to open Google Maps website.", driver);
+                mUtilityMethods.reportAndTakeScreenshot(Status.FATAL, test, "Was unable to open Google Maps website.", "/google_maps_did_not_open", driver);
             }
         }
 
@@ -42,9 +41,9 @@ class BrowserHandler {
         }
         finally {
             if (searchSuccess){
-                mUtilityMethods.reportAndTakeScreenshot(Status.PASS, test,"Search with coordinates was performed successfully.", driver);
+                mUtilityMethods.reportAndTakeScreenshot(Status.PASS, test,"Search with coordinates was performed successfully.", "/search_with_coordinates_successful", driver);
             }else {
-                mUtilityMethods.reportAndTakeScreenshot(Status.FATAL, test, "Was unable perform search using coordinates.", driver);
+                mUtilityMethods.reportAndTakeScreenshot(Status.FATAL, test, "Was unable perform search using coordinates.", "/search_with_coordinates_unsuccessful", driver);
             }
         }
     }
@@ -60,9 +59,9 @@ class BrowserHandler {
         }
         finally {
             if (validationSuccess){
-                mUtilityMethods.reportAndTakeScreenshot(Status.PASS, test, "Address was validated successfully.", driver);
+                mUtilityMethods.reportAndTakeScreenshot(Status.PASS, test, "Address was validated successfully.", "/address_was_validated_successfuly", driver);
             }else{
-                mUtilityMethods.reportAndTakeScreenshot(Status.FAIL, test, "Address validation failed.", driver);
+                mUtilityMethods.reportAndTakeScreenshot(Status.FAIL, test, "Address validation failed.", "/address_was_not_validated", driver);
             }
         }
     }

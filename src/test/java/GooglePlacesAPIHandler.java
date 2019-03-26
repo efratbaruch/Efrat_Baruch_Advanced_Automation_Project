@@ -3,17 +3,14 @@ import com.aventstack.extentreports.Status;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
+import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.io.IOException;
 
 class GooglePlacesAPIHandler {
 
-    // TODO: Decide on adress and edit then delete these requests.
-    // https://maps.googleapis.com/maps/api/place/findplacefromtext/json?inputtype=textquery&language=en&fields=geometry/location&key=AIzaSyCu2vjNMuQDCQSB67-2zsJRXkvQYgFSW64
-    // &input=Rock%20of%20Cashel
-
-    // This method sends and api request and returned the api response parsed to string
+    // This method sends an api request and returned the api response parsed to string
     String sendApiRequestAndParseResponseJson (TestParameters testParameters, ExtentTest test) {
 
         test.log(Status.INFO, "Sending API request process has begun.");
@@ -24,7 +21,6 @@ class GooglePlacesAPIHandler {
         Request request = new Request.Builder()
                 .url(testParameters.getUrl() + testParameters.getSearchParameters())
                 .build();
-
         try {
             Response response = client.newCall(request).execute();
             parsedResponse = response.body().string();
@@ -49,21 +45,26 @@ class GooglePlacesAPIHandler {
         String lat = "";
         String lng = "";
         boolean extractSuccess = false;
+        try {
+            JSONObject mainJsonObject = new JSONObject(parsedResponse);
+            JSONArray secondJsonObject = mainJsonObject.getJSONArray(Constants.JSON_DIRECTORY_1);
+            JSONObject thirdJsonObject = secondJsonObject.getJSONObject(Constants.JSON_DIRECTORY_2);
+            JSONObject fourthJsonObject = thirdJsonObject.getJSONObject(Constants.JSON_DIRECTORY_3);
+            JSONObject finalJsonObject = fourthJsonObject.getJSONObject(Constants.JSON_DIRECTORY_4);
 
-         try {
-             JSONObject mainJsonObject = new JSONObject(parsedResponse);
-             JSONObject resultsJson = mainJsonObject.getJSONObject(Constants.JSON_DIRECTORY);
-             lat = resultsJson.getString(Constants.JSON_KEY_LAT);
-             lng = resultsJson.getString(Constants.JSON_KEY_LNG);
-             extractSuccess = true;
-         }finally {
-             if (extractSuccess){
-                 test.log(Status.PASS, "Coordinates were extracted from api response successfully.");
-             }
-             else {
-                 test.log(Status.FATAL, "Was unable to extract coordinates from Api response.");
-             }
-         }
+            lat = Double.toString(finalJsonObject.getDouble(Constants.JSON_KEY_LAT));
+            lng = Double.toString(finalJsonObject.getDouble(Constants.JSON_KEY_LNG));
+
+            extractSuccess = true;
+        }
+        finally {
+            if (extractSuccess){
+                test.log(Status.PASS, "Coordinates were extracted from api response successfully.");
+            }
+            else {
+                test.log(Status.FATAL, "Was unable to extract coordinates from Api response.");
+            }
+        }
         return lat + ", " + lng;
     }
 

@@ -15,6 +15,7 @@ class DatabaseHandler {
             Statement statement = con.createStatement();
             String statementToExecute = Constants.DATABASE_QUERY_TEST_PARAMETERS + test_id + "';";
             ResultSet rs = statement.executeQuery(statementToExecute);
+            rs.next();
             url = rs.getString(Constants.DATABASE_COLUMN_NAME_1);
             searchParameters = rs.getString(Constants.DATABASE_COLUMN_NAME_2);
             rs.close();
@@ -37,6 +38,7 @@ class DatabaseHandler {
                 preparedStatement.setInt(1, test_id);
                 preparedStatement.setString(2, test_name);
                 preparedStatement.setString(3, result);
+                preparedStatement.executeUpdate();
                 preparedStatement.close();
                 test.log(Status.PASS, "Test results were sent to database successfully.");
             } catch (SQLException e) {
