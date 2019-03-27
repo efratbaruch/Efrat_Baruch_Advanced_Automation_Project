@@ -12,15 +12,15 @@ class DatabaseHandler {
             String searchParameters = "";
 
             try {
-            Statement statement = con.createStatement();
-            String statementToExecute = Constants.DATABASE_QUERY_TEST_PARAMETERS + test_id + "';";
-            ResultSet rs = statement.executeQuery(statementToExecute);
-            rs.next();
-            url = rs.getString(Constants.DATABASE_COLUMN_NAME_1);
-            searchParameters = rs.getString(Constants.DATABASE_COLUMN_NAME_2);
-            rs.close();
-            statement.close();
-            test.log(Status.PASS, "Test parameters were pulled successfully.");
+                Statement statement = con.createStatement();
+                String statementToExecute = Constants.DATABASE_QUERY_TEST_PARAMETERS + test_id + "';";
+                ResultSet rs = statement.executeQuery(statementToExecute);
+                rs.next();
+                url = rs.getString(Constants.DATABASE_COLUMN_NAME_1);
+                searchParameters = rs.getString(Constants.DATABASE_COLUMN_NAME_2);
+                rs.close();
+                statement.close();
+                test.log(Status.PASS, "Test parameters were pulled successfully.");
             }
             catch (SQLException e) {
                 e.printStackTrace();
