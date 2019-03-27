@@ -6,7 +6,7 @@ import java.sql.*;
 class DatabaseHandler {
 
         // This method pulls the url and search parameters used for the test and returns an object containing them.
-        TestParameters pullTestParametersFromRemoteDatabase (Connection con, int test_id, ExtentTest test) {
+        ApiTestParameters pullTestParametersFromRemoteDatabase (Connection con, int test_id, ExtentTest test) {
             test.log(Status.INFO, "Pull test parameters process has begun.");
             String url = "";
             String searchParameters = "";
@@ -26,7 +26,7 @@ class DatabaseHandler {
                 e.printStackTrace();
                 test.log(Status.FATAL, "Was unable to pull test parameters.");
             }
-            return new TestParameters(url, searchParameters);
+            return new ApiTestParameters(url, searchParameters);
         }
 
 

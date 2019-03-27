@@ -1,5 +1,8 @@
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
+import com.google.gson.Gson;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonObject;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
@@ -11,7 +14,7 @@ import java.io.IOException;
 class GooglePlacesAPIHandler {
 
     // This method sends an api request and returned the api response parsed to string
-    String sendApiRequestAndParseResponseJson (TestParameters testParameters, ExtentTest test) {
+    String sendApiRequestAndParseResponseJson (ApiTestParameters apiTestParameters, ExtentTest test) {
 
         test.log(Status.INFO, "Sending API request process has begun.");
         String parsedResponse = "";
@@ -19,7 +22,7 @@ class GooglePlacesAPIHandler {
 
         OkHttpClient client = new OkHttpClient();
         Request request = new Request.Builder()
-                .url(testParameters.getUrl() + testParameters.getSearchParameters())
+                .url(apiTestParameters.getUrl() + apiTestParameters.getSearchParameters())
                 .build();
         try {
             Response response = client.newCall(request).execute();
@@ -40,7 +43,7 @@ class GooglePlacesAPIHandler {
 
 
     // This method receives string response and extracts the coordinates from it
-    String extractCoordinatesFromStringResponse (String parsedResponse, ExtentTest test){
+    String extractCoordinatesFromResponse(String parsedResponse, ExtentTest test){
         test.log(Status.INFO, "Extracting coordinates from response process has begun.");
         String lat = "";
         String lng = "";
@@ -67,5 +70,36 @@ class GooglePlacesAPIHandler {
         }
         return lat + ", " + lng;
     }
+
+
+    String extractCoordinatesFromResponseUsingGson (String parsedResponse, ExtentTest test){
+        test.log(Status.INFO, "Extracting coordinates from response using Gson process has begun.");
+        String lat = "";
+        String lng = "";
+        boolean extractSuccess = false;
+        try {
+            Gson gson = new Gson();
+            JsonObject jsonObject = gson.fromJson(parsedResponse, JsonObject.class);
+            JsonArray jsonObject1 = jsonObject.getAsJsonArray("candidates");
+            JsonObject jsonObject2 = jsonObject1.get(0).getAsJsonObject();
+            JsonObject jsonObject3 = jsonObject2.getAsJsonObject("geometry");
+            JsonObject jsonObject4 = jsonObject3.getAsJsonObject("location");
+
+            lat = jsonObject4.get("lat").getAsString();
+            lng = jsonObject4.get("lng").getAsString();
+
+            extractSuccess = true;
+        }
+        finally {
+            if (extractSuccess){
+                test.log(Status.PASS, "Coordinates were extracted from api response successfully.");
+            }
+            else {
+                test.log(Status.FATAL, "Was unable to extract coordinates from Api response.");
+            }
+        }
+        return lat + ", " + lng;
+    }
+
 
 }

@@ -5,7 +5,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.sql.Connection;
 
-class GoogleMapApiValidationTest {
+class TestGoogleMapApiValidation {
 
     private DatabaseHandler mDatabaseHandler = new DatabaseHandler();
     private GooglePlacesAPIHandler mGooglePlacesAPIHandler = new GooglePlacesAPIHandler();
@@ -15,7 +15,7 @@ class GoogleMapApiValidationTest {
     private WebDriverWait wait;
     private ExtentTest test;
 
-    GoogleMapApiValidationTest(Connection connection, WebDriver driver, WebDriverWait wait, ExtentTest test){
+    TestGoogleMapApiValidation(Connection connection, WebDriver driver, WebDriverWait wait, ExtentTest test){
         this.connection = connection;
         this.driver = driver;
         this.wait = wait;
@@ -25,9 +25,9 @@ class GoogleMapApiValidationTest {
     // This method runs and arranges the logic of the test.
     void runTest (){
         test.log(Status.INFO, "testRun method has begun.");
-        TestParameters testParameters = mDatabaseHandler.pullTestParametersFromRemoteDatabase(connection, Constants.TEST_ID, test);
-        String parsedResponse = mGooglePlacesAPIHandler.sendApiRequestAndParseResponseJson(testParameters, test);
-        String coordinates = mGooglePlacesAPIHandler.extractCoordinatesFromStringResponse(parsedResponse, test);
+        ApiTestParameters apiTestParameters = mDatabaseHandler.pullTestParametersFromRemoteDatabase(connection, Constants.TEST_ID, test);
+        String parsedResponse = mGooglePlacesAPIHandler.sendApiRequestAndParseResponseJson(apiTestParameters, test);
+        String coordinates = mGooglePlacesAPIHandler.extractCoordinatesFromResponseUsingGson(parsedResponse, test);
         mBrowserHandler.openGoogleMaps(driver, wait, test);
         mBrowserHandler.inputCoordinatesToSearch(driver, wait, coordinates, test);
         mBrowserHandler.validateAddress(driver, test);

@@ -2,17 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="881e5365-952d-466f-804d-3533d9b6f3fa" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/APITestSuit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/APITestSuit.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/AbstractBasicTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/AbstractBasicTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/BrowserHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/BrowserHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Constants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/AbstractBasicTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/AbstractTestSetUp.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/DatabaseHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/DatabaseHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/GoogleMapApiValidationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GoogleMapApiValidationTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/GoogleMapApiValidationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestGoogleMapApiValidation.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/GooglePlacesAPIHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GooglePlacesAPIHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/TestParameters.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestParameters.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/UtilityMethods.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/UtilityMethods.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/testTrial.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/testTrial.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/TestParameters.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ApiTestParameters.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/AbstractBasicTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/AbstractBasicTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/BrowserHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/BrowserHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/GoogleMapApiValidationTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/GoogleMapApiValidationTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/GooglePlacesAPIHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/GooglePlacesAPIHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/TestParameters.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/TestParameters.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/UtilityMethods.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/UtilityMethods.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_files/address_was_validated_successfuly.png" beforeDir="false" afterPath="$PROJECT_DIR$/test_files/address_was_validated_successfuly.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_files/extent.html" beforeDir="false" afterPath="$PROJECT_DIR$/test_files/extent.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_files/google_maps_upload_success.png" beforeDir="false" afterPath="$PROJECT_DIR$/test_files/google_maps_upload_success.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_files/search_with_coordinates_successful.png" beforeDir="false" afterPath="$PROJECT_DIR$/test_files/search_with_coordinates_successful.png" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -26,46 +32,61 @@
     <session id="1500050701">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
+          <entry key="project.closed" value="2" />
           <entry key="project.open.time.4" value="1" />
-          <entry key="project.opened" value="1" />
+          <entry key="project.open.time.5" value="1" />
+          <entry key="project.opened" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="dummy" value="12" />
-          <entry key="java" value="9059" />
+          <entry key="dummy" value="30" />
+          <entry key="java" value="9522" />
           <entry key="xml" value="5" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="9059" />
-          <entry key="PLAIN_TEXT" value="12" />
+          <entry key="JAVA" value="9522" />
+          <entry key="PLAIN_TEXT" value="30" />
           <entry key="XML" value="5" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="class" value="2" />
+          <entry key="class" value="3" />
           <entry key="html" value="4" />
-          <entry key="java" value="61" />
+          <entry key="java" value="68" />
           <entry key="png" value="4" />
-          <entry key="xml" value="1" />
+          <entry key="xml" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="CLASS" value="2" />
+          <entry key="CLASS" value="3" />
           <entry key="HTML" value="4" />
           <entry key="Image" value="4" />
-          <entry key="JAVA" value="61" />
-          <entry key="XML" value="1" />
+          <entry key="JAVA" value="68" />
+          <entry key="XML" value="2" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/test/java/APITestSuit.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="360">
+              <caret line="24" column="5" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="5" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -95,15 +116,16 @@
         <option value="$PROJECT_DIR$/src/test/java/TestRunner.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/test/java/DatabaseHandler.java" />
-        <option value="$PROJECT_DIR$/src/test/java/APITestSuit.java" />
         <option value="$PROJECT_DIR$/src/test/java/Constants.java" />
         <option value="$PROJECT_DIR$/src/test/java/testTrial.java" />
         <option value="$PROJECT_DIR$/src/test/java/AbstractBasicTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/BrowserHandler.java" />
-        <option value="$PROJECT_DIR$/src/test/java/GoogleMapApiValidationTest.java" />
-        <option value="$PROJECT_DIR$/src/test/java/GooglePlacesAPIHandler.java" />
         <option value="$PROJECT_DIR$/src/test/java/TestParameters.java" />
         <option value="$PROJECT_DIR$/src/test/java/UtilityMethods.java" />
+        <option value="$PROJECT_DIR$/src/test/java/GooglePlacesAPIHandler.java" />
+        <option value="$PROJECT_DIR$/src/test/java/GoogleMapApiValidationTest.java" />
+        <option value="$PROJECT_DIR$/src/test/java/APITestSetUpSuit.java" />
+        <option value="$PROJECT_DIR$/src/test/java/APITestSuit.java" />
       </list>
     </option>
   </component>
@@ -158,7 +180,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="SearchEverywhereHistoryKey" value="todo&#9;ACTION&#9;ActivateTODOToolWindow" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553632875521" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553713643732" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -225,8 +247,8 @@
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.APITestSuit.test_id_1" />
-        <item itemvalue="JUnit.testTrial.test" />
         <item itemvalue="JUnit.APITestSuit.test" />
+        <item itemvalue="JUnit.testTrial.test" />
         <item itemvalue="JUnit.testTrial.jsonTrial" />
       </list>
     </recent_temporary>
@@ -245,27 +267,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="testTrial_test - 2019.03.26 at 22h 19m 23s.xml">
-      <configuration name="testTrial.test" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="testTrial_test - 2019.03.26 at 22h 19m 59s.xml">
-      <configuration name="testTrial.test" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="testTrial_test - 2019.03.26 at 22h 20m 50s.xml">
-      <configuration name="testTrial.test" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="testTrial_test - 2019.03.26 at 22h 22m 13s.xml">
-      <configuration name="testTrial.test" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="testTrial_test - 2019.03.26 at 22h 24m 26s.xml">
-      <configuration name="testTrial.test" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="testTrial_test - 2019.03.26 at 22h 24m 54s.xml">
-      <configuration name="testTrial.test" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="testTrial_test - 2019.03.26 at 22h 25m 28s.xml">
-      <configuration name="testTrial.test" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="APITestSuit_test_id_1 - 2019.03.26 at 22h 26m 06s.xml">
       <configuration name="APITestSuit.test_id_1" configurationId="JUnit" />
     </history-entry>
@@ -275,6 +276,36 @@
     <history-entry file="APITestSuit_test_id_1 - 2019.03.26 at 22h 40m 13s.xml">
       <configuration name="APITestSuit.test_id_1" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="APITestSuit_test - 2019.03.26 at 23h 11m 58s.xml">
+      <configuration name="APITestSuit.test" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="testTrial_jsonTrial - 2019.03.26 at 23h 12m 21s.xml">
+      <configuration name="testTrial.jsonTrial" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="APITestSuit_test_id_1 - 2019.03.26 at 23h 12m 24s.xml">
+      <configuration name="APITestSuit.test_id_1" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="testTrial_jsonTrial - 2019.03.26 at 23h 12m 26s.xml">
+      <configuration name="testTrial.jsonTrial" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="APITestSuit_test_id_1 - 2019.03.26 at 23h 12m 28s.xml">
+      <configuration name="APITestSuit.test_id_1" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="APITestSuit_test - 2019.03.27 at 21h 03m 59s.xml">
+      <configuration name="APITestSuit.test" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="APITestSuit_test_id_1 - 2019.03.27 at 21h 07m 35s.xml">
+      <configuration name="APITestSuit.test_id_1" configurationId="JUnit" />
+    </history-entry>
+  </component>
+  <component name="TodoView" selected-index="3">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="37" width="1436" height="763" extended-state="0" />
@@ -284,7 +315,7 @@
       <window_info id="Capture Tool" order="2" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info id="Image Layers" order="4" />
-      <window_info content_ui="combo" id="Project" order="5" visible="true" weight="0.24964131" />
+      <window_info active="true" content_ui="combo" id="Project" order="5" visible="true" weight="0.25322813" />
       <window_info id="Structure" order="6" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="0" />
       <window_info anchor="bottom" id="Event Log" order="1" side_tool="true" />
@@ -292,11 +323,11 @@
       <window_info anchor="bottom" id="Version Control" order="3" show_stripe_button="false" />
       <window_info anchor="bottom" id="Message" order="4" />
       <window_info anchor="bottom" id="Find" order="5" weight="0.3287037" />
-      <window_info anchor="bottom" id="Run" order="6" weight="0.3287037" />
+      <window_info anchor="bottom" id="Run" order="6" visible="true" weight="0.3287037" />
       <window_info anchor="bottom" id="Debug" order="7" weight="0.39969134" />
       <window_info anchor="bottom" id="Cvs" order="8" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="9" weight="0.4" />
-      <window_info active="true" anchor="bottom" id="TODO" order="10" visible="true" weight="0.3287037" />
+      <window_info anchor="bottom" id="TODO" order="10" weight="0.3287037" />
       <window_info anchor="right" id="Capture Analysis" order="0" />
       <window_info anchor="right" id="Theme Preview" order="1" />
       <window_info anchor="right" id="Palette&#9;" order="2" />
@@ -330,13 +361,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="448">
-          <caret line="73" column="21" selection-start-line="73" selection-start-column="21" selection-end-line="73" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/json/json/20180813/json-20180813.jar!/org/json/JSONObject.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
@@ -344,16 +368,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.12/junit-4.12.jar!/org/junit/internal/runners/model/ReflectiveCallable.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="9" column="62" selection-start-line="9" selection-start-column="62" selection-end-line="9" selection-end-column="62" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/test_files/extent.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/test_files/extent.html" />
     <entry file="file://$PROJECT_DIR$/test_files/search_with_coordinates_successful.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
@@ -366,23 +381,10 @@
     <entry file="file://$PROJECT_DIR$/test_files/extent.html">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/APITestSuit.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
-          <caret line="22" column="46" selection-start-line="22" selection-start-column="46" selection-end-line="22" selection-end-column="46" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/AbstractBasicTest.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/AbstractTestSetUp.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1148">
           <caret line="86" column="25" selection-start-line="86" selection-start-column="25" selection-end-line="86" selection-end-column="25" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -390,9 +392,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
           <caret line="57" column="37" selection-start-line="57" selection-start-column="37" selection-end-line="57" selection-end-column="37" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -407,50 +406,59 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="496">
           <caret line="38" column="53" selection-start-line="38" selection-start-column="53" selection-end-line="38" selection-end-column="53" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/GoogleMapApiValidationTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="45" column="68" selection-start-line="45" selection-start-column="68" selection-end-line="45" selection-end-column="68" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/GooglePlacesAPIHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret lean-forward="true" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/TestParameters.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/ApiTestParameters.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
           <caret line="5" column="97" selection-start-line="5" selection-start-column="97" selection-end-line="5" selection-end-column="97" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/testTrial.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="25" column="2" lean-forward="true" selection-start-line="25" selection-start-column="2" selection-end-line="25" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/testTrial.java" />
     <entry file="file://$PROJECT_DIR$/src/test/java/UtilityMethods.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="208">
           <caret line="15" column="38" selection-start-line="15" selection-start-column="38" selection-end-line="15" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.12/junit-4.12.jar!/org/junit/internal/runners/model/ReflectiveCallable.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="9" column="62" selection-start-line="9" selection-start-column="62" selection-end-line="9" selection-end-column="62" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="813">
+          <caret line="73" column="21" selection-start-line="73" selection-start-column="21" selection-end-line="73" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/TestGoogleMapApiValidation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="212">
+          <caret line="29" column="93" selection-start-line="29" selection-start-column="93" selection-end-line="29" selection-end-column="93" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/GooglePlacesAPIHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="800">
+          <caret line="88" column="1" selection-start-line="88" selection-start-column="1" selection-end-line="88" selection-end-column="1" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/APITestSuit.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="24" column="5" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

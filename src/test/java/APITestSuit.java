@@ -2,7 +2,7 @@ import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
 import org.junit.Test;
 
-public class APITestSuit extends AbstractBasicTest {
+public class APITestSuit extends AbstractTestSetUp {
 
     private ExtentTest test = getTest();
 
@@ -10,9 +10,9 @@ public class APITestSuit extends AbstractBasicTest {
     public void test_id_1(){
         test.log(Status.INFO, "Test 1 - " + Constants.TEST_NAME + " - now begins.");
         boolean testSuccess = false;
-        GoogleMapApiValidationTest googleMapApiValidationTest = new GoogleMapApiValidationTest(getConnection(), getDriver(), getWait(), getTest());
+        TestGoogleMapApiValidation testGoogleMapApiValidation = new TestGoogleMapApiValidation(getConnection(), getDriver(), getWait(), getTest());
         try {
-            googleMapApiValidationTest.runTest();
+            testGoogleMapApiValidation.runTest();
             testSuccess = true;
         }finally {
             if (testSuccess) {
@@ -20,7 +20,7 @@ public class APITestSuit extends AbstractBasicTest {
             } else {
                 test.log(Status.FAIL, "Test 1 - " + Constants.TEST_NAME + " - has failed.");
             }
-            googleMapApiValidationTest.reportTestResult(testSuccess);
+            testGoogleMapApiValidation.reportTestResult(testSuccess);
         }
     }
 
