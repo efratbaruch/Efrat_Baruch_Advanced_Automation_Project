@@ -24,14 +24,14 @@ class TestGoogleMapApiValidation {
 
     // This method runs and arranges the logic of the test.
     void runTest (){
-        test.log(Status.INFO, "testRun method has begun.");
+        test.log(Status.INFO, "runTest method has begun.");
         ApiTestParameters apiTestParameters = mDatabaseHandler.pullTestParametersFromRemoteDatabase(connection, Constants.TEST_ID, test);
         String parsedResponse = mGooglePlacesAPIHandler.sendApiRequestAndParseResponseJson(apiTestParameters, test);
         String coordinates = mGooglePlacesAPIHandler.extractCoordinatesFromResponseUsingGson(parsedResponse, test);
         mBrowserHandler.openGoogleMaps(driver, wait, test);
         mBrowserHandler.inputCoordinatesToSearch(driver, wait, coordinates, test);
         mBrowserHandler.validateAddress(driver, test);
-        test.log(Status.INFO, "testRun method has ended.");
+        test.log(Status.INFO, "runTest method has ended.");
 
     }
 

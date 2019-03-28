@@ -64,7 +64,7 @@ public abstract class AbstractTestSetUp {
     // This method connects to a remote database
     private void connectToDatabase(){
         try {
-            Class.forName("com.mysql.cj.jdbc.Driver");
+            Class.forName(Constants.JDBC_CONNECTION_NAME);
             connection = DriverManager.getConnection(Constants.DATABASE_URL, Constants.DATABASE_USER_NAME, Constants.DATABASE_PASSWORD);
         }catch (SQLException e){
             test.log(Status.FATAL, "Was unable to connect to remote database");

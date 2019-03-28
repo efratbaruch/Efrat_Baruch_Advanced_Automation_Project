@@ -55,8 +55,8 @@ class GooglePlacesAPIHandler {
             JSONObject fourthJsonObject = thirdJsonObject.getJSONObject(Constants.JSON_DIRECTORY_3);
             JSONObject finalJsonObject = fourthJsonObject.getJSONObject(Constants.JSON_DIRECTORY_4);
 
-            lat = Double.toString(finalJsonObject.getDouble(Constants.JSON_KEY_LAT));
-            lng = Double.toString(finalJsonObject.getDouble(Constants.JSON_KEY_LNG));
+            lat = Double.toString(finalJsonObject.getDouble(Constants.JSON_KEY_1));
+            lng = Double.toString(finalJsonObject.getDouble(Constants.JSON_KEY_2));
 
             extractSuccess = true;
         }
@@ -80,13 +80,13 @@ class GooglePlacesAPIHandler {
         try {
             Gson gson = new Gson();
             JsonObject jsonObject = gson.fromJson(parsedResponse, JsonObject.class);
-            JsonArray jsonObject1 = jsonObject.getAsJsonArray("candidates");
-            JsonObject jsonObject2 = jsonObject1.get(0).getAsJsonObject();
-            JsonObject jsonObject3 = jsonObject2.getAsJsonObject("geometry");
-            JsonObject jsonObject4 = jsonObject3.getAsJsonObject("location");
+            JsonArray jsonObject1 = jsonObject.getAsJsonArray(Constants.JSON_DIRECTORY_1);
+            JsonObject jsonObject2 = jsonObject1.get(Constants.JSON_DIRECTORY_2).getAsJsonObject();
+            JsonObject jsonObject3 = jsonObject2.getAsJsonObject(Constants.JSON_DIRECTORY_3);
+            JsonObject jsonObject4 = jsonObject3.getAsJsonObject(Constants.JSON_DIRECTORY_4);
 
-            lat = jsonObject4.get("lat").getAsString();
-            lng = jsonObject4.get("lng").getAsString();
+            lat = jsonObject4.get(Constants.JSON_KEY_1).getAsString();
+            lng = jsonObject4.get(Constants.JSON_KEY_2).getAsString();
 
             extractSuccess = true;
         }

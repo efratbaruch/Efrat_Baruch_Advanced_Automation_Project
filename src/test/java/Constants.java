@@ -1,8 +1,11 @@
+import com.sun.xml.internal.rngom.parse.xml.SAXParseable;
 import org.openqa.selenium.By;
 
 class Constants {
 
     static final String BROWSER_OF_CHOISE = "chrome";
+    static final String JDBC_CONNECTION_NAME = "com.mysql.cj.jdbc.Driver";
+
     static final int TEST_ID = 1;
     static final String TEST_NAME = "Google Map Api Validation Test";
     static final String RESULT_SUCCESS = "Success";
@@ -25,8 +28,8 @@ class Constants {
     static final String JSON_DIRECTORY_3 = "geometry";
     static final String JSON_DIRECTORY_4 = "location";
 
-    static final String JSON_KEY_LAT = "lat";
-    static final String JSON_KEY_LNG = "lng";
+    static final String JSON_KEY_1 = "lat";
+    static final String JSON_KEY_2 = "lng";
 
     static final String GOOGLE_MAPS_URL = "https://www.google.com/maps?hl=en";
 

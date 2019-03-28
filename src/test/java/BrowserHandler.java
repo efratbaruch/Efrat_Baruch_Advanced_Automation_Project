@@ -26,7 +26,6 @@ class BrowserHandler {
                 mUtilityMethods.reportAndTakeScreenshot(Status.FATAL, test, "Was unable to open Google Maps website.", "/google_maps_did_not_open", driver);
             }
         }
-
     }
 
     // This method sends a search in Google Maps site using coordinates given.
